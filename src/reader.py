@@ -1,3 +1,7 @@
+# Función para seleccionar archivo
+
+
+# Función para leer archivo
 def read_logs():
     with open("data/logs.txt") as file_object:
 
