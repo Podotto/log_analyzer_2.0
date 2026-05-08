@@ -66,4 +66,4 @@ def create_report(file_path):
                 report.write(f"{user}: {count}\n")
                 total += 1
 
-    print("Reporte generado correctamente")
+    print("¡Reporte generado correctamente!")
