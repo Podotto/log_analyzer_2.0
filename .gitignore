@@ -1,0 +1,6 @@
+#Reporte generado
+output/reporte.txt
+
+#Cache
+__pycache__/
+*.pyc
