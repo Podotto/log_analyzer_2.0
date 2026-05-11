@@ -33,4 +33,25 @@ def graph_events():
     plt.show()
 
 
-graph_events()
+# Gráfica para ver eventos realizados por usuarios
+def user_events():
+    df = pd.read_csv(
+        "data/logs2.txt", header=None, names=["Date", "User", "Event", "Status"]
+    )
+
+    user_count = df["User"].value_counts()
+
+    plt.figure(figsize=(10, 6))
+
+    user_count.plot(kind="barh", color="orange")
+
+    plt.title("Actividad de los usuarios")
+    plt.xlabel("# of events")
+    plt.ylabel("Users")
+    plt.yticks(fontsize=6)
+    plt.tight_layout()
+
+    plt.show()
+
+
+user_events()
