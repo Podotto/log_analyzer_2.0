@@ -3,11 +3,9 @@ import matplotlib.pyplot as plt
 
 
 # Gráfica para ver intentos de logins
-def graph_logins():
+def graph_logins(file_path):
 
-    df = pd.read_csv(
-        "data/logs2.txt", header=None, names=["Date", "User", "Event", "Status"]
-    )
+    df = pd.read_csv(file_path, header=None, names=["Date", "User", "Event", "Status"])
 
     status_count = df["Status"].value_counts()
     status_count.plot(kind="barh", color="violet")
@@ -18,11 +16,9 @@ def graph_logins():
 
 
 # Gráfica para ver tipos de eventos
-def graph_events():
+def graph_events(file_path):
 
-    df = pd.read_csv(
-        "data/logs2.txt", header=None, names=["Date", "User", "Event", "Status"]
-    )
+    df = pd.read_csv(file_path, header=None, names=["Date", "User", "Event", "Status"])
 
     event_count = df["Event"].value_counts()
     ax = event_count.plot(kind="bar", color="blue")
@@ -34,10 +30,8 @@ def graph_events():
 
 
 # Gráfica para ver eventos realizados por usuarios
-def user_events():
-    df = pd.read_csv(
-        "data/logs2.txt", header=None, names=["Date", "User", "Event", "Status"]
-    )
+def user_events(file_path):
+    df = pd.read_csv(file_path, header=None, names=["Date", "User", "Event", "Status"])
 
     user_count = df["User"].value_counts()
 
@@ -52,6 +46,3 @@ def user_events():
     plt.tight_layout()
 
     plt.show()
-
-
-user_events()
