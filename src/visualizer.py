@@ -26,7 +26,7 @@ def graph_events(file_path):
     for i, v in enumerate(event_count):
         ax.text(i, v, str(v), fontweight="bold")
 
-    plt.title("Total de Eventos")
+    plt.title("Total de eventos")
 
     plt.show()
 
