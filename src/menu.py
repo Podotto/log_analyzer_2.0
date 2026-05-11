@@ -8,7 +8,7 @@ from src.analyzer import (
     suspicious_users,
     top_users,
 )
-from src.report import create_report
+from src.report import create_report, convert_pdf
 from src.visualizer import graph_logins, graph_events, user_events
 
 
@@ -54,6 +54,16 @@ def mostrar_menu():
             case "4":
                 print("Generando reporte...")
                 create_report(selected_file)
+
+                option = int(
+                    input("¿Desea convertir el reporte a PDF?\n1. Sí\n2. No\n")
+                )
+
+                if option == 1:
+                    convert_pdf()
+
+                else:
+                    print("Puede visualizar su reporte en formato .txt")
 
             case "5":
                 print(
