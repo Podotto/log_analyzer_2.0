@@ -1,3 +1,6 @@
+from fpdf import FPDF
+
+
 def create_report(file_path):
     total_events = 0
     login_success = 0
@@ -67,3 +70,20 @@ def create_report(file_path):
                 total += 1
 
     print("¡Reporte generado correctamente!")
+
+
+def convert_pdf():
+
+    pdf = FPDF()
+
+    pdf.add_page()
+
+    pdf.set_font("Arial", size=12)
+
+    with open("output/reporte.txt", "r") as pdf_report:
+
+        for i in pdf_report:
+            pdf.cell(200, 10, txt=i.strip(), ln=1, align="L")
+
+    pdf.output("output/reporte.pdf")
+    print("¡PDF generado correctamente!")
