@@ -9,6 +9,7 @@ from src.analyzer import (
     top_users,
 )
 from src.report import create_report
+from src.visualizer import graph_logins, graph_events, user_events
 
 
 def mostrar_menu():
@@ -21,7 +22,8 @@ def mostrar_menu():
         print("2. Procesar datos")
         print("3. Analizar datos")
         print("4. Generar reporte")
-        print("5. Salir")
+        print("5. Generar gráficas")
+        print("6. Salir")
 
         option = input("Seleccione una opción: ")
 
@@ -54,6 +56,25 @@ def mostrar_menu():
                 create_report(selected_file)
 
             case "5":
+                print(
+                    "1. Gráfica de intentos de logins\n2. Gráfica de eventos\n3. Gráfica de actividad de usuarios"
+                )
+
+                option = int(input("¿Cuál gráfica desea visualizar?: "))
+
+                if option == 1:
+                    graph_logins(selected_file)
+
+                if option == 2:
+                    graph_events(selected_file)
+
+                if option == 3:
+                    user_events(selected_file)
+
+                else:
+                    print("No es una opción válida.")
+
+            case "6":
                 print("Saliendo del programa.")
                 break
 
