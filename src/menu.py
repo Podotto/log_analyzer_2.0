@@ -14,11 +14,12 @@ from src.visualizer import graph_logins, graph_events, user_events
 
 def mostrar_menu():
 
-    selected_file = ""
+    selected_file = select_file()
 
     while True:
+
         print("MENÚ PRINCIPAL")
-        print("1. Leer logs")
+        print("1. Leer datos")
         print("2. Procesar datos")
         print("3. Analizar datos")
         print("4. Generar reporte")
@@ -28,10 +29,8 @@ def mostrar_menu():
         option = input("Seleccione una opción: ")
 
         match option:
+
             case "1":
-
-                selected_file = select_file()
-
                 if selected_file != "":
                     print("Leyendo logs...")
                     read_logs(selected_file)
