@@ -1,5 +1,6 @@
 #Reporte generado
 output/reporte.txt
+output/reporte.pdf
 
 #Cache
 __pycache__/
